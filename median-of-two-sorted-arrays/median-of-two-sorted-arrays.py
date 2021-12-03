@@ -20,16 +20,14 @@ class Solution:
             return merged [mid]
     def merge_sort(self,l):
       if len(l) > 1:
-          output=[]
+         
           mid= len(l)//2
           L= l[:mid]
           R= l[mid:]
-
           self.merge_sort(L)
           self.merge_sort(R)
           i=j=k=0
           while i < len(L) and j < len(R):
-              temp=[]
               if L[i]> R[j]:
                   l[k]=R[j]
                   j+=1
@@ -38,6 +36,7 @@ class Solution:
                   l[k]=L[i]
                   i+=1
               k+=1
+          
           while i < len(L):
               l[k] = L[i]
               i += 1
