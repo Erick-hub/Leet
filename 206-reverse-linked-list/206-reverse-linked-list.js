@@ -9,9 +9,22 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head, prev=null) {
-    if(!head) return prev;
-    let next = head.next; // 先把下一個記起來
-    head.next = prev; // 將自己反過來指向前一個
-    return reverseList(next, head);
+var reverseList = function (head) {
+    if(head==null || !head.next==null){
+        return head
+    }
+    else{
+        let current=head   
+        let prev=null
+        let nxt=null
+        while(current){
+            nxt=current.next
+            current.next=prev
+            prev=current        
+            current=nxt
+            head=prev
+            
+        }
+        return head
+    }
 };
